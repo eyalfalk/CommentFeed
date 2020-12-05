@@ -6,16 +6,22 @@ class Comment extends Component{
   render() {
     return (
       <div style = {style.comment} >
-        <Avatar
-          email = {this.props.email}
-          style = {style.avatar}
-        />
-        <div style = {style.commentEmail} >
-          {this.props.email}
-        </div>
-        <div style = {style.commentMessage} >
-          {this.props.message}
-        </div>
+        <table>
+          <tr>
+            <td>
+              <Avatar
+                style = {style.avatar}
+                email = {this.props.email}
+              />
+            </td>
+            <div style = {style.commentEmail}>
+              {this.props.email}
+            </div>
+            <div style = {style.commentMessage}>
+              {this.props.message}
+            </div>
+          </tr>
+        </table>
       </div>
     );
   }

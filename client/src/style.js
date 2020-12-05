@@ -1,91 +1,84 @@
 const style = {
+  body: {
+    backgroundColor:'#F7F7F7',
+    position: 'sticky',
+    padding: '10px'
+  },
   app: {
-    width:'40vw',
-    margin:'100px',
-    padding: '10px',
-    fontFamily:'sans-serif'
+    width:'490px',
+    margin:'50px',
+    fontFamily:'sans-serif',
+    backgroundColor:'#FFFFFF'
   },
   formBox: {
     width: '450px',
-    margin:'10px',
     padding: '20px',
-    backgroundColor:'#EFEFEF',  
+    backgroundColor:'#EFEFEF'
   },
   emailInput: {
     width:'400px',
-    margin:'10px',
-    padding:'0 10px',
-    height:'50px',
+    margin:'5px',
+    padding:'10px',
+    height:'25px',
     borderStyle: 'solid',
     borderColor: '#E5E5E5'
   },
   messageInput: {
     width:'400px',
-    margin:'10px',
+    margin:'5px',
     padding:'0 10px',
-    height:'100px',
+    height:'80px',
     borderStyle: 'solid',
     borderColor: '#E5E5E5'
   },
   submitInput: {
     width:'100px',
-    margin:'10px',
+    margin:'5px 328px',
     height:'40px',
     backgroundColor:'#66B2E7',
     color:'#fff',
     textTransform:'uppercase',
     borderRadius:'5px',
     borderWidth: '0px',
-    borderColor:'#66B2E7',
-    // TODO [EF] move submit button to the right of the form
+    borderColor:'#66B2E7'
   },
   feedBox: {
     width: '450px',
     margin: '10px',
-    padding: '20px',
-    // TODO [EF] ask about scrolling - in page or in feed box?
-    // scrolling comments is now done on the whole web page,
-    // to scroll within the feed box, uncomment line below:
-    //overflowY:'scroll'
+    padding: '20px'
   },
   filterInput: {
     width:'400px',
-    margin:'10px',
-    padding:'0 10px',
-    height:'50px',
+    margin:'5px',
+    padding:'10px',
+    height:'25px',
     borderStyle: 'solid',
     borderColor: '#E5E5E5'
-    // TODO [EF] add image left of "Filter" text
-    // https://www.clker.com/cliparts/w/r/Q/0/x/D/search-icon-light-grey.svg
   },
   commentList: {
-    width: '400px',
-    margin: '10px',
-    padding: '10px',
+    width: '4000px',
+    padding: '10px 0',
     fontSize:'.85rem'
   },
   comment: {
     width: '400px',
-    margin: '10px',
-    padding: '10px',
+    padding: '5px 0',
     fontSize:'.85rem'
   },
   avatar: {
-    width: '100px',
-    margin: '10px',
-    padding: '10px',
+    width: '60px',
+    borderRadius:'5px',
   },
   commentEmail: {
     width: '300px',
-    margin: '10px',
-    padding: '10px',
+    margin: '5px',
     font: 'bold 20px sans-serif'
   },
   commentMessage: {
     width: '300px',
-    margin: '10px',
-    padding: '10px',
-    font: '20px sans-serif'
+    margin: '5px',
+    font: '20px sans-serif',
+    color: '#6D6D6E'
   }  
 }
 

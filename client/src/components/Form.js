@@ -22,7 +22,6 @@ class Form extends Component{
       return;
     }
     this.props.onCommentSubmit({email: email, message: message});
-    // TODO [EF] handle weird refresh ?
   }
 
   handleChange(event) {
@@ -41,18 +40,21 @@ class Form extends Component{
           placeholder = 'Email'
           value = {this.state.email}
           onChange = {this.handleChange}
-          style = {style.emailInput} />
-        <br/><input
+          style = {style.emailInput}
+        />
+        <input
           type = 'text'
           name = 'message'
           placeholder = 'Message'
           value = {this.state.message}
           onChange = {this.handleChange}
-          style = {style.messageInput} />
+          style = {style.messageInput}
+        />
         <input
           type = 'submit'
           value = 'Submit'
-          style = { style.submitInput } />
+          style = { style.submitInput }
+        />
       </form>
     );
   }
