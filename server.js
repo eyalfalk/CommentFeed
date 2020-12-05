@@ -1,10 +1,10 @@
 'use strict';
 // Import dependencies
-const express = require('express');
-const bodyParser = require('body-parser');
-const Comment = require('./model/comments');
-const cors = require('cors');
-const path = require('path');
+const express = require('express')
+const bodyParser = require('body-parser')
+const Comment = require('./model/comments')
+const cors = require('cors')
+const mongoose = require('mongoose')
 
 // Create a new express application named 'app'
 const app = express()
@@ -16,7 +16,6 @@ const router = express.Router()
 const port = process.env.PORT || 5000
 
 // Access my Mongo DB
-const mongoose = require('mongoose')
 const mongoDbUrl = getDbUrl()
 mongoose.connect(mongoDbUrl, { useNewUrlParser: true , useUnifiedTopology: true })
 const db = mongoose.connection
@@ -35,9 +34,12 @@ router.route('/comments')
   .get((req, res) => {
     // Look at Comment Schema
     Comment.find((err, comments) => {
-      if (err)
+      if (err) {
+        console.log('failed to find comments')
         res.send(err)
+      }
       // Respond with a json object of DB comments.
+      console.log(`successfully found ${comments.length} comments`)
       res.json(comments)
     })
   })
@@ -49,8 +51,11 @@ router.route('/comments')
     comment.message = req.body.message
 
     comment.save(function(err) {
-      if (err)
+      if (err) {
+        console.log('failed to save comments')
         res.send(err)
+      }
+      console.log('successfully saved comment')
       res.json({ message: 'Comment successfully added!' })
     })
   })
@@ -61,11 +66,11 @@ app.use('/api/', router)
 app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`))
 
 function getDbUrl() {
-  const dbUser = "dbEfalk";
-  const dbPass = "LxAqeDaQigTqYdbv";
-  const dbName = "commentfeed";
-  return  "mongodb+srv://" +
-          dbUser + ":" +
-          dbPass + "@cluster0.kf1uw.mongodb.net/" +
-          dbName + "?retryWrites=true&w=majority"
+  const dbUser = 'dbEfalk';
+  const dbPass = 'LxAqeDaQigTqYdbv';
+  const dbName = 'commentfeed';
+  return  'mongodb+srv://' +
+          dbUser + ':' +
+          dbPass + '@cluster0.kf1uw.mongodb.net/' +
+          dbName + '?retryWrites=true&w=majority'
 }

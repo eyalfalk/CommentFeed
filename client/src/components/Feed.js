@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import style from '../style';
-import TextField from "@material-ui/core/TextField";
-import IconButton from "@material-ui/core/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import SearchIcon from "@material-ui/icons/Search";
+import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
 
 class Feed extends Component{
   
@@ -36,11 +36,11 @@ class Feed extends Component{
     return (
       <div style = {style.feedBox} >
         <TextField
-          name = "filter"
-          placeholder = "Filter"
+          name = 'filter'
+          placeholder = 'Filter'
           value = {this.state.filter}
           onChange = {this.handleChange}
-          variant = "outlined"
+          variant = 'outlined'
           fullWidth = {true}
           InputProps = { {
             startAdornment : (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Form from "./components/Form";
-import Feed from "./components/Feed";
+import Form from './components/Form';
+import Feed from './components/Feed';
 import axios from 'axios';
 import style from './style';
 
