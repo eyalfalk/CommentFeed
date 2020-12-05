@@ -11,7 +11,6 @@ class App extends Component {
     this.state = { data: [] };
     this.getCommentsFromServer = this.getCommentsFromServer.bind(this);
     this.sendCommentsToServer = this.sendCommentsToServer.bind(this);
-    this.pollInterval = null;
   }
 
   getCommentsFromServer() {
@@ -35,14 +34,6 @@ class App extends Component {
 
   componentDidMount() {
     this.getCommentsFromServer();
-    if(!this.pollInterval) {
-      this.pollInterval = setInterval(this.getCommentsFromServer, this.props.pollInterval);
-    }
-  }
-
-  componentWillUnmount() {
-    this.pollInterval && clearInterval(this.pollInterval);
-    this.pollInterval = null;
   }
 
   render() {

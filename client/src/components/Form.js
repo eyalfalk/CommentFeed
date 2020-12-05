@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from '../style';
+import TextField from "@material-ui/core/TextField";
 
 class Form extends Component{
   
@@ -15,10 +16,9 @@ class Form extends Component{
 
   handleSubmit(event) {
     const { email, message } = this.state;
+    event.preventDefault();
     if (!email || !message) {
       alert(`Please enter both an email AND a message`);
-      // don't refresh the page (to keep any already-entered text):
-      event.preventDefault();
       return;
     }
     this.props.onCommentSubmit({email: email, message: message});
@@ -34,21 +34,30 @@ class Form extends Component{
   render() {
     return (
       <form onSubmit = {this.handleSubmit} style = {style.formBox}>
-        <input
-          type = 'text'
+        <TextField
           name = 'email'
           placeholder = 'Email'
           value = {this.state.email}
           onChange = {this.handleChange}
-          style = {style.emailInput}
+          variant = 'outlined'
+          fullWidth = {true}
+          InputProps = { {
+            disableUnderline : true,
+            style: style.emailInput
+          } }
         />
-        <input
-          type = 'text'
+        <TextField
           name = 'message'
           placeholder = 'Message'
           value = {this.state.message}
           onChange = {this.handleChange}
-          style = {style.messageInput}
+          variant = 'outlined'
+          fullWidth = {true}
+          multiline = {true}
+          InputProps = { {
+            disableUnderline : true,
+            style: style.messageInput
+          } }
         />
         <input
           type = 'submit'

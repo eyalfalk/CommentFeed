@@ -16,44 +16,41 @@ const style = {
     backgroundColor:'#EFEFEF'
   },
   emailInput: {
-    width:'400px',
-    margin:'5px',
-    padding:'10px',
-    height:'25px',
-    borderStyle: 'solid',
-    borderColor: '#E5E5E5'
+    width:'450px',
+    margin:'5px 0 5px',
+    height:'50px',
+    backgroundColor: 'white'
   },
   messageInput: {
-    width:'400px',
-    margin:'5px',
-    padding:'0 10px',
+    width:'450px',
+    margin:'5px 0 5px',
     height:'80px',
-    borderStyle: 'solid',
-    borderColor: '#E5E5E5'
+    backgroundColor: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'top'
   },
   submitInput: {
     width:'100px',
-    margin:'5px 328px',
+    margin:'5px 350px',
     height:'40px',
     backgroundColor:'#66B2E7',
     color:'#fff',
     textTransform:'uppercase',
     borderRadius:'5px',
     borderWidth: '0px',
-    borderColor:'#66B2E7'
+    borderColor:'#66B2E7',
+    font: 'bold 15px sans-serif'
   },
   feedBox: {
     width: '450px',
-    margin: '10px',
-    padding: '20px'
+    margin: '20px'
   },
   filterInput: {
-    width:'400px',
-    margin:'5px',
-    padding:'10px',
-    height:'25px',
-    borderStyle: 'solid',
-    borderColor: '#E5E5E5'
+    width:'450px',
+    margin:'5px 0 5px',
+    height:'50px',
+    backgroundColor: 'white'
   },
   commentList: {
     width: '4000px',
@@ -79,7 +76,7 @@ const style = {
     margin: '5px',
     font: '20px sans-serif',
     color: '#6D6D6E'
-  }  
+  }
 }
 
 export default style;

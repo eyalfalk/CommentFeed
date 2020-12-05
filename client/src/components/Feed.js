@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import style from '../style';
+import TextField from "@material-ui/core/TextField";
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
 
 class Feed extends Component{
   
@@ -31,16 +35,25 @@ class Feed extends Component{
     })
     return (
       <div style = {style.feedBox} >
-        <form id='search'>
-        <input
-          type = 'text'
-          name = 'filter'
-          placeholder = 'Filter'
+        <TextField
+          name = "filter"
+          placeholder = "Filter"
           value = {this.state.filter}
           onChange = {this.handleChange}
-          style = {style.filterInput}
+          variant = "outlined"
+          fullWidth = {true}
+          InputProps = { {
+            startAdornment : (
+              <InputAdornment>
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+            disableUnderline : true,
+            style: style.filterInput
+          } }
         />
-        </form>
         <div style = {style.commentList} >
           {commentList}
         </div>
