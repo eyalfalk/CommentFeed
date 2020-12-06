@@ -16,9 +16,10 @@ class Form extends Component{
 
   handleSubmit(event) {
     const { email, message } = this.state;
-    event.preventDefault();
     if (!email || !message) {
       alert(`Please enter both an email AND a message`);
+      // Don't refresh to keep already-entered text
+      event.preventDefault();
       return;
     }
     this.props.onCommentSubmit({email: email, message: message});
