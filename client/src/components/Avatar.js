@@ -41,16 +41,17 @@ class Avatar extends Component {
           anchorEl={this.state.anchorEl}
           onClose={handleClose}
           anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
+            vertical: 'center',
+            horizontal: 'right',
           }}
           transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
+            vertical: 'center',
+            horizontal: 'left',
           }}
         >
-          <Typography> {/*TODO [EF] add style ?*/}
+          <Typography style={style.popup}>
             {this.props.email} <br/>
+            Last active: <br/>
             {this.props.lastCommentDate} <br/>
           </Typography>
         </Popover>

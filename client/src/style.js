@@ -76,6 +76,10 @@ const style = {
     margin: '5px',
     font: '20px sans-serif',
     color: '#6D6D6E'
+  },
+  popup: {
+    font: '15px sans-serif',
+    padding: '5px'
   }
 }
 
