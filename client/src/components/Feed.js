@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchIcon from '@material-ui/icons/Search';
+import moment from 'moment';
 
 class Feed extends Component{
   
@@ -22,13 +23,21 @@ class Feed extends Component{
   }
 
   render() {
+    let lastCommentPerEmail = {}
+    this.props.data.forEach(comment => {
+      let lastDate = lastCommentPerEmail[comment.email]
+      if ( !lastDate || moment(comment.moment).isAfter(moment(lastDate)) )
+      {
+        lastCommentPerEmail[comment.email] = comment.moment
+      }
+    })
     let commentList = this.props.data.map(comment => {
       if (comment.email.includes(this.state.filter))
         return (
           <Comment
             email = {comment.email}
             message = {comment.message}
-            key = {comment['_id']}
+            lastCommentDate = {lastCommentPerEmail[comment.email]}
           /> )
       else
         return <div/>;

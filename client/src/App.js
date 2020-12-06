@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Feed from './components/Feed';
 import axios from 'axios';
 import style from './style';
+import moment from 'moment';
 
 class App extends Component {
   
@@ -23,6 +24,7 @@ class App extends Component {
   sendCommentsToServer(comment) {
     let comments = this.state.data;
     comment._id = Date.now();
+    comment.moment = moment().format("YYYY-MM-DD HH:mm:ss")
     let newComments = comments.concat([comment]);
     this.setState({ data: newComments });
     axios.post(this.props.url, comment)

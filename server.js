@@ -49,6 +49,7 @@ router.route('/comments')
     var comment = new Comment()
     comment.email = req.body.email
     comment.message = req.body.message
+    comment.moment = req.body.moment
 
     comment.save(function(err) {
       if (err) {

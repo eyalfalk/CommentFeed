@@ -12,6 +12,7 @@ class Comment extends Component{
               <Avatar
                 style = {style.avatar}
                 email = {this.props.email}
+                lastCommentDate = {this.props.lastCommentDate}
               />
             </td>
             <div style = {style.commentEmail}>
